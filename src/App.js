@@ -1,14 +1,7 @@
 import React from 'react';
 import './App.css';
 import auth from 'solid-auth-client';
-
-class Chat extends React.Component {
-  render() {
-    return (
-      <h1>Chat</h1>
-    )
-  }
-}
+import Chat from './Chat';
 
 class Login extends React.Component {
   constructor(props) {

@@ -19,7 +19,7 @@ class Login extends React.Component {
           e.preventDefault()
           auth.login(this.state.inputVal)
         }}>
-          <label for="idpInput">Your IDP:</label>
+          <label htmlFor="idpInput">Your IDP:</label>
           <input
             type="text"
             placeholder="Example: https://solid.community"
@@ -43,7 +43,6 @@ class ChatApp extends React.Component {
     }
     // Check to see if already authenticated
     auth.trackSession(session => {
-      console.log(session)
       if (!session)
         this.setState({ loadingAuth: false })
       else

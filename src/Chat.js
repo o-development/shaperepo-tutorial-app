@@ -1,17 +1,25 @@
 import React from 'react'
-import auth from 'solid-auth-client';
-
-async function validateChatRdf() {
-
-}
+// import auth from 'solid-auth-client';
+import shex from 'shex';
 
 async function getChat(chatUrl) {
-  const chatTriples = await (await auth.fetch(chatUrl)).text()
-  console.log(chatTriples)
-}
+  // const shexc = "http://localhost:3000/shapes?id=https%3A%2F%2Fshaperepo.com%2Fschemas%2Fchat";
+  // const data = chatUrl;
+  // const node = chatUrl;
+  const shexc = "http://shex.io/examples/Issue.shex";
+  const data = "http://shex.io/examples/Issue1.ttl";
+  const node = "http://shex.io/examples/Issue1";
 
-async function sendMessage() {
-
+  shex.Loader.load([shexc], [], [data], []).then(function (loaded) {
+    try {
+      const db = shex.Util.makeN3DB(loaded.data);
+      const validator = shex.Validator.construct(loaded.schema, { results: "api" });
+      const result = validator.validate(db, [{node: node, shape: shex.Validator.start}]);
+      console.log(result);
+    } catch(err) {
+      console.log(err)
+    }
+  });
 }
 
 class Chat extends React.Component {

@@ -3,12 +3,12 @@ import React from 'react'
 import shex from 'shex';
 
 async function getChat(chatUrl) {
-  // const shexc = "http://localhost:3000/shapes?id=https%3A%2F%2Fshaperepo.com%2Fschemas%2Fchat";
-  // const data = chatUrl;
-  // const node = chatUrl;
-  const shexc = "http://shex.io/examples/Issue.shex";
-  const data = "http://shex.io/examples/Issue1.ttl";
-  const node = "http://shex.io/examples/Issue1";
+  const shexc = "http://localhost:3000/shapes?id=https%3A%2F%2Fshaperepo.com%2Fschemas%2Fchat";
+  const data = chatUrl; // For example https://jackson.solid.community/public/demochat/index.ttl
+  const node = chatUrl;
+  // const shexc = "http://shex.io/examples/Issue.shex";
+  // const data = "http://shex.io/examples/Issue1.ttl";
+  // const node = "http://shex.io/examples/Issue1";
 
   shex.Loader.load([shexc], [], [data], []).then(function (loaded) {
     try {

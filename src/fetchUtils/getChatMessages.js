@@ -15,8 +15,11 @@ import { namedNode } from "@rdfjs/data-model";
      content: string
  * }[]
  */
+
 export default async function getChatMessages(chatUrl) {
+  // The url of the file containing the chat
   const dataUrl = chatUrl;
+  // The url of the node within the file that is the chat
   const nodeUrl = chatUrl;
 
   // Fetch the chat using solid-auth-client

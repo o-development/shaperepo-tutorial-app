@@ -2,7 +2,7 @@ import { Store, Parser } from "n3";
 import shex from 'shex';
 
 /**
- * Takes in a turtle representation and a 
+ * Takes in a turtle representation and returns true if it is a chat
  * @param {string} chatTtl: The turtle representation of the chat 
  * @param {string} dataUrl: The url of the file the data was at
  * @param {string} nodeUrl: The url of the 
